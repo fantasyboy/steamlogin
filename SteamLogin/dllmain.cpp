@@ -16,7 +16,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	{
 	case DLL_PROCESS_ATTACH: {
 		DisableThreadLibraryCalls(hModule);
-		//login("excusely", "hexueling123", 0);
 		_beginthreadex(NULL, NULL, &ThreadFunc, NULL, NULL, NULL);
 		break;
 	}
@@ -28,10 +27,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	return TRUE;
 }
 
-void login(std::string username1, std::string password1, bool bRember)
+void login(std::string username, std::string password, bool bRember)
 {
-	char username[0x20] = "excusely"; 
-	char password[0x20] = "hexueling123";
 	__asm {
 		MOV EAX, DWORD PTR DS : [0x39FE17A8];
 		MOV ESI, EAX;
