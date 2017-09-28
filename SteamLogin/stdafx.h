@@ -12,6 +12,7 @@
 #include <windows.h>
 
 #include <mutex>
-
+#include <Psapi.h>
+#pragma comment(lib , "Psapi.lib")
 // TODO:  在此处引用程序需要的其他头文件
 #define _USER_DBG

@@ -62,5 +62,18 @@ bool utils::Ustrstr(char* str1, char *str2)
 	__except (1) {
 		return false;
 	}
+
 	return false;
+}
+
+
+MODULEINFO utils::GetModuleInformationEx(std::string moduleName)
+{
+	MODULEINFO module = { 0 };
+	auto hModule = GetModuleHandle(moduleName.c_str());
+	if (hModule)
+	{
+		GetModuleInformation(GetCurrentProcess(), hModule, &module, sizeof(MODULEINFO));
+	}
+	return module;
 }

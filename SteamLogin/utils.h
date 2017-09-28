@@ -14,6 +14,7 @@ public:
 	template<class T> T read(const DWORD& dwNodeBase);
 	void log(char* _format, ...);
 	bool Ustrstr(char* str1, char *str2);
+	MODULEINFO GetModuleInformationEx(std::string moduleName);
 };
 
 template<class T>
